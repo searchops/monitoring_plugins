@@ -49,6 +49,7 @@ def setup(parser):
             action="store_true")
     return(parser.parse_args())
 
+
 def getPort(prt, ssl):
     '''utility function to map from ssl flag or port variable to correct port.'''
     if prt == None:
@@ -60,8 +61,9 @@ def getPort(prt, ssl):
         port = prt
     return port
 
-def main():
 
+def main():
+    '''main function running the check'''
     parser = OptionParser("%prog -H HOST -u URL [-p PORT] " + \
             "(-w WARNING |-c CRITICAL) [-s] [-e]")
     (opts, args) = setup(parser)
